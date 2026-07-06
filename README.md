@@ -8,11 +8,21 @@
 
 ---
 
-## The Problem
+## Inspiration
 
-Popular approaches to AI context management (including LeafBox's `handoff.md` method) treat context loss as a **session-end problem** — write a summary before you leave, read it when you come back.
+> This project was **inspired by [LeafBox](https://www.youtube.com/@leafbox) (นิว)** — specifically EP.45 "[ลืม Context ไม่ต้องกลัว!](https://youtube.com/watch?v=...)" where he introduced the `handoff.md` technique for Claude Code.
+>
+> His concept of writing a session-end handoff summary was the spark that made us realize: **if one file is good, a structured, multi-layer system is better.**
+>
+> Full credit to LeafBox for popularizing the habit of organized session handoffs. 🙏
 
-This works. But it's **manual, flat, and fragile**.
+---
+
+## The Starting Point: handoff.md
+
+The `handoff.md` approach treats context loss as a **session-end problem** — write a summary before you leave, read it when you come back.
+
+It works. But it's **manual, flat, and fragile**.
 
 - 🤚 Manual — You must remember to write the handoff
 - 📄 Flat — Everything in one markdown file; no structure
@@ -105,7 +115,7 @@ No re-reading 50KB of history. Just pinpoint what's relevant.
 
 ## Comparison: handoff.md vs Hermes Multi-Layer
 
-| Capability | LeafBox handoff.md | Hermes 3-Layer |
+| Capability | handoff.md approach (LeafBox) | Hermes 3-Layer |
 |---|---|---|
 | **Initiation** | 👤 Manual (human remembers) | 🤖 Automatic |
 | **Granularity** | 📄 One flat file per session | 🏗️ Facts / Workflows / History separated |
@@ -121,7 +131,7 @@ No re-reading 50KB of history. Just pinpoint what's relevant.
 
 ## The "Dumb Zone" Prevention
 
-Why don't we hit the "Dumb Zone" that LeafBox describes?
+Why don't we hit the "Dumb Zone" (a term popularized by LeafBox) that describes what happens when context hits 150K-200K tokens?
 
 **Long context doesn't mean bad context.** The 3-layer architecture keeps the agent's active context lean:
 
@@ -191,3 +201,5 @@ MIT — Do whatever you want with these ideas. Attribution appreciated.
 ---
 
 *Built by [Aim](https://github.com/lekalsutee), AI assistant for [Sutee Leelanuntagit](mailto:lekal.sutee@gmail.com), inspired by the Hermes Agent framework.*
+
+*Special thanks to **LeafBox (นิว)** for the `handoff.md` concept that served as the benchmark for this architecture. [Subscribe to LeafBox](https://www.youtube.com/@leafbox) for great AI workflow content.*

@@ -83,19 +83,20 @@ Examples:
 
 ```yaml
 # SKILL.md
-name: lighting-simulation-dialux
-description: "Dialux-quality lighting simulation..."
+name: deploy-static-site
+description: "Deploy a static site to Cloudflare Pages..."
 ```
 ```
 Steps:
-1. Parse IES/LDT photometric file
-2. Run CU calculation algorithm
-3. Verify against DIALux reference values
+1. Build the project (e.g. npm run build)
+2. Run wrangler deploy --branch production
+3. Verify SSL + DNS propagation
 Common Pitfalls:
-- LDT file version mismatch → check header row count
-- CU curves extrapolate at 0% → clamp to minimum value
+- Build fails on missing env vars → check .env.production
+- wrangler not installed → npm install -g wrangler
 Verification Checklist:
-- [ ] Output matches DIALux within ±2%
+- [ ] Site loads on custom domain (HTTPS 200)
+- [ ] Assets serve with correct cache headers
 ```
 
 Skills are loaded **on demand** — zero token cost when not needed.
